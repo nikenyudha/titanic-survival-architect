@@ -65,3 +65,9 @@ if st.button("Predict Now"):
     else:
         st.error(f"### Result: Death 💀")
         st.write(f"The model predicts this passenger has a chance of survival **{probability*100:.2f}%**.")
+
+st.markdown(
+    "<hr style='margin-top:50px;'>"
+    "<center style='color: gray;'>© 2026 Niken Larasati —  titanic-survival-predictor💗</center>",
+    unsafe_allow_html=True
+)      
