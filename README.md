@@ -3,7 +3,7 @@
 This project predicts the survival probability of Titanic passengers using a **Gradient Boosting Classifier**. It covers the entire machine learning pipeline, from raw data exploration to a deployed web application.
 
 ## 🚀 Live Demo
-[Insert Streamlit Cloud Link Here]
+[https://predictive-titanic-app.streamlit.app/]
 
 ---
 
