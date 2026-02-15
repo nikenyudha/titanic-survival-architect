@@ -9,27 +9,27 @@ scaler = pickle.load(open('scaler.pkl', 'rb'))
 feature_cols = pickle.load(open('feature_columns.pkl', 'rb'))
 
 st.title("🚢 Titanic Survival Predictor")
-st.write("Masukkan data penumpang untuk melihat peluang keselamatan.")
+st.write("Enter passenger data to see safety opportunities.")
 
-# 2. Buat Input Form (Sesuaikan dengan fitur di generate_model.py)
+# 2. Buat Input Form (Sesuai dengan fitur di generate_model.py)
 col1, col2 = st.columns(2)
 
 with col1:
-    pclass = st.selectbox("Kelas Penumpang (Pclass)", [1, 2, 3])
-    age = st.slider("Umur", 0, 80, 25)
-    sex = st.selectbox("Jenis Kelamin", ["male", "female"])
+    pclass = st.selectbox("Passanger Class (Pclass)", [1, 2, 3])
+    age = st.slider("Age", 0, 80, 25)
+    sex = st.selectbox("Gender", ["male", "female"])
 
 with col2:
-    fare = st.number_input("Harga Tiket (Fare)", value=10.0)
-    title = st.selectbox("Gelar (Title)", ["Mr", "Miss", "Mrs", "Master", "Rare"])
-    embarked = st.selectbox("Pelabuhan (Embarked)", ["S", "C", "Q"])
+    fare = st.number_input("Ticket price (Fare)", value=10.0)
+    title = st.selectbox("Title (Title)", ["Mr", "Miss", "Mrs", "Master", "Rare"])
+    embarked = st.selectbox("Harbor (Embarked)", ["S", "C", "Q"])
     family_size = st.number_input("Jumlah Anggota Keluarga", min_value=1, step=1, value=1)
 
 # Tambahan fitur otomatis
-has_cabin = st.checkbox("Punya Nomor Kabin?")
+has_cabin = st.checkbox("Have a Cabin Number?")
 
 # 3. Tombol Prediksi
-if st.button("Prediksi Sekarang"):
+if st.button("Predict Now"):
     # Buat DataFrame mentah dari input user
     raw_input = pd.DataFrame([{
         'Pclass': pclass,
@@ -60,8 +60,8 @@ if st.button("Prediksi Sekarang"):
     
     st.divider()
     if prediction == 1:
-        st.success(f"### HASIL: SELAMAT! 🎉")
-        st.write(f"Model memprediksi penumpang ini memiliki peluang hidup sebesar **{probability*100:.2f}%**.")
+        st.success(f"### Result: Survive! 🎉")
+        st.write(f"The model predicts this passenger has a chance of survival **{probability*100:.2f}%**.")
     else:
-        st.error(f"### HASIL: TEWAS 💀")
-        st.write(f"Model memprediksi penumpang ini memiliki peluang hidup sebesar **{probability*100:.2f}%**.")
+        st.error(f"### Result: Death 💀")
+        st.write(f"The model predicts this passenger has a chance of survival **{probability*100:.2f}%**.")
