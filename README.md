@@ -6,6 +6,8 @@ This project predicts the survival probability of Titanic passengers using a **G
 [https://predictive-titanic-app.streamlit.app/]
 
 ---
+##  🚢 For Analytics 
+[https://github.com/nikenyudha/titanic-survival-architect/blob/main/titanic-analytics.ipynb]
 
 ## 📊 Project Workflow
 
